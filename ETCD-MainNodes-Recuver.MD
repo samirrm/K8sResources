@@ -14,14 +14,11 @@
   --force-new-cluster em ExecStart=/usr/bin/etcd
 
 ## 5 Start e  Check no serviço do etcd.Service:
-  systemctl daemon-reload
-  systemctl restart etcd  
-  
+  systemctl daemon-reload && systemctl restart etcd 
   etcdctl member list 
   etcdctl endpoint status
 
 ## 6 Remover config no systemd do etcd:
   Removi o --force-new-cluster no ExecStart=/usr/bin/etcd
-
   systemctl daemon-reload
   systemctl restart etcd
