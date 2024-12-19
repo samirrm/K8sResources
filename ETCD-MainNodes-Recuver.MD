@@ -10,17 +10,17 @@
     set -a
     source /etc/etcd.env
 
-## 4 Adicionar config no systemd do etcd
+## 4 Adicionar config no systemd do etcd:
   --force-new-cluster em ExecStart=/usr/bin/etcd
 
-## 5 Start e  Check no serviço do etcd.Service
+## 5 Start e  Check no serviço do etcd.Service:
   systemctl daemon-reload
   systemctl restart etcd  
   
   etcdctl member list 
   etcdctl endpoint status
 
-## 6
+## 6 Remover config no systemd do etcd:
   Removi o --force-new-cluster no ExecStart=/usr/bin/etcd
 
   systemctl daemon-reload
