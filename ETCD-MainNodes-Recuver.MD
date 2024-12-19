@@ -17,8 +17,7 @@
 ## 4
   - Adicionei o --force-new-cluster no ExecStart=/usr/bin/etcd
 
-## 5 
- - Check no serviço do etcd.Service
+## 5 Start e  Check no serviço do etcd.Service
 
   systemctl daemon-reload
   systemctl restart etcd  
