@@ -1,24 +1,19 @@
 # ETCD Main Recovery Steps
 
 ## 1. Remoção dos demais main nodes do arquivo `/etc/etcd.env`
-
-  - Removi os demais main nodes do arquivo: e /etc/etcd.env
     ETCD_INITIAL_CLUSTER=
 
-## 2
-  - Removi os demais main nodes do arquivo: 
+## 2 Removi os demais main nodes do arquivo: 
     manifests/kube-apiserver.yaml
 
-## 3
-  - Adicionei as variáveis de ambiente no shell 
+## 3 Adicionei as variáveis de ambiente no shell 
     set -a
     source /etc/etcd.env
 
-## 4
-  - Adicionei o --force-new-cluster no ExecStart=/usr/bin/etcd
+## 4 Adicionar config no systemd do etcd
+  --force-new-cluster em ExecStart=/usr/bin/etcd
 
 ## 5 Start e  Check no serviço do etcd.Service
-
   systemctl daemon-reload
   systemctl restart etcd  
   
