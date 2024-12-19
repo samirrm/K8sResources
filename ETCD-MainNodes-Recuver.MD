@@ -22,4 +22,6 @@
 ````
 ## 6 Remover config no systemd do etcd:
   Removi o --force-new-cluster no ExecStart=/usr/bin/etcd
+```bash
   systemctl daemon-reload && systemctl restart etcd
+```
